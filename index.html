@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<style>
+  body{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    background-color: #f4f1ee;
+  }
+    .nav{
+        display:flex;
+        align-items:center;
+        justify-content :space-between;
+        background-color:#6b705c;
+        font-family: Arial, Helvetica, sans-serif;
+        color:aliceblue;
+        padding:7px 20px;
+    }
+    .hamburger{
+        display:none;
+    }
+    .nav-links{
+        list-style: none;
+        display:flex;
+        gap:20px;
+        align-items: center;
+       
+
+    }
+    .nav-links li a{
+        text-decoration: none;
+        color: antiquewhite;
+        padding: 9px 15px;
+         transition: color 0.3s;
+    }
+    .nav-links li a:hover{
+       
+        color: #ebe71d;             /* Highlight on hover */
+        border-radius: 4px;
+    }
+    .logo img {
+    height:50px;
+    width:auto;
+    display:block;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;         /* Show only on mobile/tablet */
+  }
+
+  .nav-links {
+    display: none;          /* Hide links by default on small screens */
+    flex-direction: column;
+    background-color: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;          /* Show menu when toggled */
+  }
+
+}
+#home {
+    height:100vh;
+    background-image:
+     linear-gradient(rgba(0, 0, 0, 0), rgba(248, 234, 234, 0.418)), url(backgroundimg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+   justify-content:left;
+   text-align:left;
+   overflow: hidden;
+  }
+#hero-content {
+   padding:5px;
+   color:rgb(66, 22, 2);
+   font-size: 5vh;
+}
+
+#hero-content h1{
+  margin:0;
+  padding:5px;
+  position: relative;
+  display: inline-block;
+  color: rgb(66, 22, 2);
+  
+}
+
+#hero-content p{
+  margin-top: 0;
+  padding:5px;
+  margin-bottom: 15px;
+ 
+}
+
+
+.btn{
+    text-decoration:none;
+    display: inline-block;
+    background-color: rgb(66, 22, 2);
+    padding:8px;
+    color:antiquewhite;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.30);
+}
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.60);
+}
+#gallery{
+  margin: 0px;
+  padding:0px;
+  background-color: #a5a58d;
+   border-top: 1px solid transparent;
+   font-size:5vh;
+}
+#gallery h1{
+  padding:5px;
+  margin:5px;
+  color: rgb(66, 22, 2);
+  background-color:rgb(219, 213, 211);
+  display:flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.60) ;
+}
+#gallerypic{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+#gallerypic img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  object-fit:cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.40);
+  transition: transform 0.3s ease;
+}
+#gallerypic img:hover{
+  transform: scale(1.45);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.60);
+}
+#about{
+  margin: 0;
+  padding:0;
+  background-color: rgb(66, 22, 2);
+  color:#e7e7e7;
+  border-top: 1px solid transparent;
+}
+#about h1{
+  padding:5px;
+  color:#e7e7e7;
+  font-size: 7vh;
+  text-align:center;
+  background-color: #2b1202;
+  
+}
+.about-content{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  align-items:center;
+  padding:40px;
+  gap:15px;
+}
+
+.aboutmepic img{
+  width:350px;
+  max-width:100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.30);
+  border-radius: 12px;
+  transition: transform 0.8s;
+}
+
+.aboutmepic img:hover
+{
+ transform:translateY(-5px);
+ box-shadow: 0 4px 10px rgba(0,0,0,0.80);
+ 
+}
+
+.aboutme h2{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.aboutme:hover{
+  transform:translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.60);
+}
+.aboutme {
+  background-color: #ffffff4d;
+  padding:20px 30px;
+  border-radius: 16px;
+  font-size:1rem;
+  line-height: 1.6;
+  transition: transform 0.5s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.30);
+}
+/* respnsive layout for about section */
+@media (max-width: 768px) {
+ .about-content{
+  display:grid;
+  grid-template-columns: 1fr;
+ }
+}
+
+#contact{
+  background-color: #9b7741;
+  border-top: 1px solid transparent;
+  color: #2b1202;
+  padding:45px;
+}
+#contact-box{
+  background-color: #e0ae6450;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+#contact h1{
+  font-size: 7vh;
+
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 5px; 
+}
+input {
+  /* padding: 7px; */
+  border:1px solid transparent;
+  border-bottom: 3px solid #2b1202;
+  /* border-radius: 8px; */
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  background-color: #fdfdfd00;
+  margin-bottom: 10px;
+}
+input:focus {
+  outline: none;
+  border-bottom:1px solid #2b1202;
+  box-shadow: 0 0 8px rgba(91, 54, 45, 0.30);
+  
+}
+label {
+  padding:3px;
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: #2b1202;
+}
+
+#contact button{
+  padding: 14px;
+  border:2px solid #9b7741;
+  border-radius: 7px;
+  font-size:2vh;
+  color: #9b7741;
+  background-color: #2b1202;
+  box-shadow: 0 0 8px rgba(91, 54, 45, 0.20);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+#contact button:hover{
+  background-color:  #9b7741;
+  color: #2b1202;
+  box-shadow: 0 0 8px rgba(91, 54, 45, 0.50);
+}
+</style>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="Ava lensworth logo.png" alt="logo">
+         </div>
+         <div class="hamburger" id="hamburger">&#9776;
+
+         </div>
+            <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+            </nav>
+
+            <section id="home">
+            <div id="hero-content">
+           <h1>AVA LENSWORTH</h1>
+           <p>World Through My Lens</p>
+           <a href="#gallery" class="btn">View Gallery</a>
+            </div> 
+            </section>
+             <section id="gallery">
+              <h1>MY LENS</h1>
+              
+              <div id="gallerypic">
+              <div class="item item1"><img src="pic1.jpeg"></div>
+              <div class="item item2"><img src="pic2.jpeg"></div>
+              <div class="item item3"><img src="pic3.jpeg"></div>
+             <div class="item item4"><img src="pic4.jpeg"></div>
+              <div class="item item5"><img src="pic3.jpeg"></div>
+             <div class="item item6"><img src="pic4.jpeg"></div>
+             <div class="item item7"><img src="pic1.jpeg"></div>
+              <div class="item item8"><img src="pic2.jpeg"></div>
+              <div class="item item9"><img src="pic3.jpeg"></div>
+             </div>
+            </section> <section id="about">
+              <h1 class="about">ABOUT ME</h1>
+              <div class="about-content">
+              <div class="aboutmepic">
+                <img src="aboutme.jpeg" alt="photographer">
+              </div>
+                <div class="aboutme">
+                  <h2><b> Hello I am Ava Lensworth</b></h2>
+                  <h3>A TRAVEL PHOTOGRAPHER</h3>
+                  <p> 
+                    cupiditate alias magni impedit molestias! Sapiente magni, ratione veritatis, molestiae, magnam dicta veniam mollitia commodi quas fugit possimus aspernatur reprehenderit Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla non dolore ducimus maxime cum voluptas, ipsam earum quasi laboriosam eum nihil molestiae commodi ex rem, recusandae in pariatur. Delectus, nesciunt. Consequatur ipsam hic eveniet deserunt, repellendus, vero doloribus dolore placeat amet laboriosam, mollitia aliquid illum aut reprehenderit totam facilis velit!</p>
+                </div>
+            </div>
+            </section>
+             <section id="contact">
+              <div id="contact-box">
+              <h1>Contact</h1>
+              <div class="contact -form">
+                <form>
+                  
+                <div class="name"> 
+                  <div class="field">
+                  <label for="fname"> First Name</label><br>
+                  <input type="text" id="fname" name="fname">
+                  </div>
+                </div>
+                  <div class="field">
+                  <label for="lname">Last Name</label><br>
+                  <input type="text" id="lname" name="lname">
+                  </div> 
+                  <div class="field">
+                  <label for="email">E-Mail Id</label><br>
+                  <input type="email" id="email" name="email"><br>
+                  <label for="mesaage">Your Message</label><br>
+                  <input type="text" id="message" name="message"><br>
+                  <button>SUBMIT</button>
+                 
+                </form>
+              </div>
+</div>
+            </section>
+    
+
+</body>
+</html>
